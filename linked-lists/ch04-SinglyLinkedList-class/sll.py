@@ -5,7 +5,7 @@ class SLLNode:
         self.next = None
 
     def __repr__(self):
-        return "SLLNode object: data={}".format(self.data)
+        return "SLLNode object: data = {}".format(self.data)
 
     def get_data(self):
         """Return the self.data attribute."""
@@ -31,13 +31,19 @@ class SLL:
         self.head = None
 
     def __repr__(self):
-        return f"SLL object: {self.head}"
+        return f"SLL object: head = {self.head}"
 
     def is_empty(self):
-        pass
+        """checks if the Linked List is empty"""
+        return self.head is None
 
     def add_front(self, new_data):
-        pass
+        """create a temporary node and assign it with the new data we want to add front
+        then set the next to the self.head node
+        then move the head node to the newly created node"""
+        temp = SLLNode(new_data)
+        temp.set_next(self.head)
+        self.head = temp
 
     def size(self):
         pass
@@ -47,4 +53,3 @@ class SLL:
 
     def remove(self, data):
         pass
-
