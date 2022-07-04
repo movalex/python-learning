@@ -40,13 +40,25 @@ class SLL:
     def add_front(self, new_data):
         """create a temporary node and assign it with the new data we want to add front
         then set the next to the self.head node
-        then move the head node to the newly created node"""
+        then move the head node to the newly created node
+        Adding a head Node with new_data to the front of the list"""
         temp = SLLNode(new_data)
         temp.set_next(self.head)
         self.head = temp
 
     def size(self):
-        pass
+        """Traverse the Linked List and return an int value with the numiber of nodes
+
+        Time complexity is O(n) because every node must be visited to get the size of the LL"""
+        size = 0
+        if self.is_empty():
+            # print("already empty")
+            return 0
+        current = self.head
+        while current:  # while there are still nodes left to count
+            size += 1
+            current = current.get_next()
+        return size
 
     def search(self, data):
         pass
