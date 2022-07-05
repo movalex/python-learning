@@ -60,8 +60,22 @@ class SLL:
             current = current.get_next()
         return size
 
-    def search(self, data):
-        pass
+    def search(self, data=None):
+        """Traverse the Linked List, return True if the data is found in the LL, otherwise False
+
+        The time complexity is O(n) because in worst case we would need to check every Node
+        """
+        if not data:
+            return "search request is empty"
+        if self.is_empty():
+            return "Linked List is empty. No nodes to search"
+
+        current = self.head
+        while current:
+            if current.get_data() == data:
+                return True
+            current = current.get_next()
+        return False
 
     def remove(self, data):
         pass
